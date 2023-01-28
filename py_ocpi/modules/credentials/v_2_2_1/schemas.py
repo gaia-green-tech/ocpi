@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Union
 from pydantic import BaseModel
 
 from py_ocpi.core.data_types import CiString, URL, String
@@ -12,8 +12,8 @@ class CredentialsRole(BaseModel):
     """
     role: RoleEnum
     business_details: BusinessDetails
-    party_id: CiString(3)
-    country_code: CiString(2)
+    party_id: Union[CiString(3), None]
+    country_code: Union[CiString(2), None]
 
 
 class Credentials(BaseModel):
