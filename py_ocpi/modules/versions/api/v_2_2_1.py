@@ -17,11 +17,9 @@ async def get_version_details():
     endpoints = cpo_endpoints + emps_endpoints
 
     return OCPIResponse(
-        data=[
-            VersionDetail(
-                version=VersionNumber.v_2_2_1,
-                endpoints=endpoints
-            ).dict(),
-        ],
+        data=VersionDetail(
+            version=VersionNumber.v_2_2_1,
+            endpoints=endpoints
+        ).dict(),
         **status.OCPI_1000_GENERIC_SUCESS_CODE,
     )
